@@ -1,143 +1,105 @@
-<!-- Contact Form (Formspree Integrated) -->
-<div class="contact-form-wrapper">
+<!-- Clean Mobile-First Contact Form -->
+<div class="contact-container">
   <form action="https://formspree.io/f/xblollna" method="POST" class="contact-form" id="contactForm">
-    <h2>Let’s Work Together 💼</h2>
+    <h2>Let’s 📦</h2>
 
-    <div class="form-row">
-      <input type="text" name="firstname" placeholder="First Name" required>
-      <input type="text" name="lastname" placeholder="Last Name" required>
+    <input type="text" name="firstname" placeholder="First Name" required>
+    <input type="text" name="lastname" placeholder="Last Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="text" name="phone" placeholder="Phone Number" required>
+
+    <label class="service-label">What are you looking for?</label>
+    <div class="radio-group">
+      <label><input type="radio" name="service" value="Web Design" required> Web Design</label>
+      <label><input type="radio" name="service" value="Graphics Design"> Graphics Design</label>
+      <label><input type="radio" name="service" value="Logo Design"> Logo Design</label>
+      <label><input type="radio" name="service" value="Others"> Others</label>
     </div>
 
-    <div class="form-row">
-      <input type="email" name="email" placeholder="Email Address" required>
-      <input type="text" name="phone" placeholder="Phone Number" required>
-    </div>
-
-    <div class="form-radio-group">
-      <label>What are you looking for?</label>
-      <div class="radio-options">
-        <label><input type="radio" name="service" value="Web Design" required> Web Design</label>
-        <label><input type="radio" name="service" value="Graphics Design"> Graphics Design</label>
-        <label><input type="radio" name="service" value="Logo Design"> Logo Design</label>
-        <label><input type="radio" name="service" value="Others"> Others</label>
-      </div>
-    </div>
-
-    <textarea name="message" rows="5" placeholder="Your message..." required></textarea>
-
+    <textarea name="message" rows="4" placeholder="Your message..." required></textarea>
     <button type="submit">Send Message</button>
     <p class="thank-you" style="display:none;">Thanks for contacting me! I’ll reply ASAP 💌</p>
   </form>
 </div>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
-.contact-form-wrapper {
-  width: 90%;
-  max-width: 650px;
-  padding: 30px;
-  background: rgba(255, 255, 255, 0.07);
+.contact-container {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255,255,255,0.08);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
   backdrop-filter: blur(10px);
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
   color: white;
-  animation: fadeIn 1.2s ease;
 }
 
 .contact-form h2 {
-  margin-bottom: 20px;
-  font-size: 28px;
   text-align: center;
-  color: #ffffff;
-}
-
-.form-row {
-  display: flex;
-  gap: 15px;
   margin-bottom: 20px;
-  flex-wrap: wrap;
+  font-size: 24px;
 }
 
-.form-row input {
-  flex: 1;
-  min-width: 100px;
-  padding: 12px;
-  background: rgba(255,255,255,0.1);
-  border: none;
-  border-radius: 8px;
-  color: white;
-  font-size: 14px;
-  outline: none;
-}
-
-textarea {
+.contact-form input,
+.contact-form textarea {
   width: 100%;
   padding: 12px;
+  margin-bottom: 15px;
   background: rgba(255,255,255,0.1);
   border: none;
   border-radius: 8px;
   color: white;
   font-size: 14px;
-  resize: vertical;
-  margin-bottom: 20px;
   outline: none;
 }
 
-.form-radio-group {
-  margin: 20px 0;
-}
-
-.form-radio-group label {
+.service-label {
   display: block;
-  margin-bottom: 10px;
   font-weight: 600;
+  margin-bottom: 10px;
 }
 
-.radio-options {
+.radio-group {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin-bottom: 15px;
 }
 
-.radio-options label {
+.radio-group label {
   background: rgba(255,255,255,0.1);
-  padding: 10px 15px;
+  padding: 8px 12px;
   border-radius: 6px;
   cursor: pointer;
-  user-select: none;
-  transition: background 0.3s;
+  font-size: 13px;
 }
 
-.radio-options input {
-  margin-right: 8px;
-}
-
-.radio-options label:hover {
-  background: rgba(255,255,255,0.2);
+.radio-group input {
+  margin-right: 6px;
 }
 
 button {
   width: 100%;
-  padding: 14px;
+  padding: 12px;
   background-color: #6A64F1;
   color: white;
-  font-size: 16px;
+  font-size: 15px;
+  font-weight: 600;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-weight: 600;
-  transition: 0.3s;
+  transition: background 0.3s;
 }
 
 button:hover {
@@ -145,22 +107,10 @@ button:hover {
 }
 
 .thank-you {
+  margin-top: 12px;
   text-align: center;
-  margin-top: 15px;
   color: #aaffaa;
   font-weight: 600;
-  animation: fadeIn 1s ease;
-}
-
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(20px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-
-@media (max-width: 600px) {
-  .form-row {
-    flex-direction: column;
-  }
 }
 </style>
 
@@ -171,18 +121,17 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
   fetch(form.action, {
     method: "POST",
     body: new FormData(form),
-    headers: {
-      Accept: "application/json"
-    }
+    headers: { Accept: "application/json" }
   }).then(response => {
     if (response.ok) {
       form.querySelector('.thank-you').style.display = 'block';
       form.reset();
     } else {
-      alert('Something went wrong. Please try again.');
+      alert("Something went wrong. Please try again!");
     }
   }).catch(error => {
-    alert('Error: ' + error.message);
+    alert("Error: " + error.message);
   });
 });
 </script>
+

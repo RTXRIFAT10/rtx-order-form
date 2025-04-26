@@ -1,7 +1,7 @@
-<!-- Contact Form (Formspree Ready) -->
+<!-- Contact Form (Formspree Integrated) -->
 <div class="contact-form-wrapper">
   <form action="https://formspree.io/f/xblollna" method="POST" class="contact-form" id="contactForm">
-    <h2>Let’s Order 💼</h2>
+    <h2>Let’s Work Together 💼</h2>
 
     <div class="form-row">
       <input type="text" name="firstname" placeholder="First Name" required>
@@ -44,7 +44,7 @@ body {
 }
 
 .contact-form-wrapper {
-  width: 100%;
+  width: 90%;
   max-width: 650px;
   padding: 30px;
   background: rgba(255, 255, 255, 0.07);
@@ -66,10 +66,12 @@ body {
   display: flex;
   gap: 15px;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .form-row input {
-  width: 100%;
+  flex: 1;
+  min-width: 100px;
   padding: 12px;
   background: rgba(255,255,255,0.1);
   border: none;
@@ -176,7 +178,11 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
     if (response.ok) {
       form.querySelector('.thank-you').style.display = 'block';
       form.reset();
+    } else {
+      alert('Something went wrong. Please try again.');
     }
+  }).catch(error => {
+    alert('Error: ' + error.message);
   });
 });
 </script>
